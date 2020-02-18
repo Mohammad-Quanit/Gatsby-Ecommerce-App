@@ -1,0 +1,17 @@
+{
+    "projectName": "jamstack-ecommerce",
+    "version": "3.0",
+    "frontend": "javascript",
+    "javascript": {
+        "framework": "react",
+        "config": {
+            "SourceDir": "src",
+            "DistributionDir": "public",
+            "BuildCommand": "gatsby build",
+            "StartCommand": "yarn run start"
+        }
+    },
+    "providers": [
+        "awscloudformation"
+    ]
+}

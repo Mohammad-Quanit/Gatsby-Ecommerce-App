@@ -1,0 +1,14 @@
+{
+    "trigger": true,
+    "modules": [
+        "add-to-group"
+    ],
+    "parentResource": "jamstackecommerce2d4b3d00",
+    "functionName": "jamstackecommerce2d4b3d00PostConfirmation",
+    "parentStack": "auth",
+    "triggerEnvs": "[]",
+    "triggerTemplate": "PostConfirmation.json.ejs",
+    "roleName": "jamstackecommerce2d4b3d00PostConfirmation",
+    "skipEdit": true,
+    "resourceName": "jamstackecommerce2d4b3d00PostConfirmation"
+}

@@ -1,0 +1,57 @@
+{
+	"function": {
+		"jamstackecommerce2d4b3d00PostConfirmation": {
+			"service": "Lambda",
+			"providerPlugin": "awscloudformation",
+			"build": true
+		}
+	},
+	"auth": {
+		"jamstackecommerce2d4b3d00": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "function",
+					"resourceName": "jamstackecommerce2d4b3d00PostConfirmation",
+					"triggerProvider": "Cognito",
+					"attributes": [
+						"Arn",
+						"Name"
+					]
+				}
+			]
+		}
+	},
+	"storage": {
+		"s3bcec7f55": {
+			"service": "S3",
+			"providerPlugin": "awscloudformation"
+		}
+	},
+	"api": {
+		"ecommerceapi": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"authConfig": {
+					"additionalAuthenticationProviders": [
+						{
+							"authenticationType": "API_KEY",
+							"apiKeyConfig": {
+								"description": "gatsby",
+								"apiKeyExpirationDays": "100"
+							}
+						}
+					],
+					"defaultAuthentication": {
+						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
+						"userPoolConfig": {
+							"userPoolId": "authjamstackecommerce2d4b3d00"
+						}
+					}
+				}
+			}
+		}
+	}
+}
