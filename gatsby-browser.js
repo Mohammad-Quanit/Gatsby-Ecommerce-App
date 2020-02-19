@@ -5,5 +5,9 @@
  */
 
 // You can delete this file if you're not using it
+import Amplify from "aws-amplify";
+import config from "./src/aws-exports";
 import "./src/styles/site.css"
 import "./src/layouts/layout.css"
+
+Amplify.configure(config);
